@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Data Vibes</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/noui/nouislider.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+<style>
+	input[type="color"] {
+		-webkit-appearance: none;
+		border: none;
+		width: 100%;
+	}
+	input[type="color"]::-webkit-color-swatch-wrapper {
+		padding: 0;
+	}
+	input[type="color"]::-webkit-color-swatch {
+		border: none;
+	}
+	input[type="button"]{
+		cursor: pointer;
+	}
+	
+	.slider {
+	  -webkit-appearance: none;
+	  width: 100%;
+	  height: 25px;
+	  background: #d3d3d3;
+	  outline: none;
+	  opacity: 0.7;
+	  -webkit-transition: .2s;
+	  transition: opacity .2s;
+	}
+	
+	.slider:hover {
+	  opacity: 1;
+	}
+	
+	.slider::-webkit-slider-thumb {
+	  -webkit-appearance: none;
+	  appearance: none;
+	  width: 25px;
+	  height: 25px;
+	  background: #4CAF50;
+	  cursor: pointer;
+	}
+	
+	.slider::-moz-range-thumb {
+	  width: 25px;
+	  height: 25px;
+	  background: #4CAF50;
+	  cursor: pointer;
+	}
+
+	img{
+		width:100%;
+	}
+	div.sel img:hover{
+		cursor: pointer;
+	}
+
+	div.sel div{
+		margin-bottom: 2px;
+	}
+	</style>
+</head>
+<body onload='distribute()'>
+
+
+	<div class="container-contact100">
+		<div class="wrap-contact100">
+			<form class="contact100-form validate-form">
+				<div id="formpart">
+					<span class="contact100-form-title">
+						Data Vibes
+					</span>
+		
+					<div class="wrap-input100 validate-input bg1">
+						Dear participant,<br><br> 
+
+Thanks for being part of this experiment!<br><br>
+
+This is a short interactive questionnaire, where you can help us in questioning our hypothesis. During our project we played around with analyzing IMDb reviews, with focus on the text characteristics such as its sentiment, topic, subjectivity and assigned color value.<br>
+Afterwards, the data of analyzed reviews, led us into idea of creating a “movie signature” visualization. The following pictures are communicating the results, where each picture represents reviews of one movie.<br><br> 
+
+How are they representing them? That’s part of the secret :).<br>
+Let’s start.<br>
+
+					</div>
+
+					<div class="wrap-input100 validate-input bg1">
+						<div style="text-align:center">1/4</div><br>
+						<b>Looking at the following picture and its features (balance, depth, curvature, complexity, animacy, emotion, etc. ) can you find a picture that you feel like is most similar ?</b><br><br>
+						<div class="wrap-input100 validate-input bg1">
+							<div style="border: 1px solid black; width: 100%;margin-bottom:5px">
+								<img id="im1" src="images/img-01.png">
+							</div>
+							<div class="sel" style="width: 100%;padding-left:1%">
+								<div>
+									<div style="border:1px solid black;text-align:center;display:inline-block; width:49%">
+										<img id="i11" src="images/img-01.png" onclick="sel(1, this)">
+									</div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i12" src="images/img-01.png" onclick="sel(1, this)">
+									</div>
+								</div>
+								<div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i13" src="images/img-01.png" onclick="sel(1, this)">
+									</div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i14" src="images/img-01.png" onclick="sel(1, this)">
+									</div>
+								</div>
+								<div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i15" src="images/img-01.png" onclick="sel(1, this)">
+									</div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i16" src="images/img-01.png" onclick="sel(1, this)">
+									</div>
+								</div>
+							</div>
+							<input type="text" style="display:none" id="sel1">
+						</div><br><br>
+
+						<b>Looking at the following picture and its features (balance, depth, curvature, complexity, animacy, emotion, etc. ) can you find a picture that you feel like is most similar ?</b><br><br>
+						<div class="wrap-input100 validate-input bg1">
+							<div style="border: 1px solid black; width: 100%;margin-bottom:5px">
+								<img id="im2" src="images/img-01.png">
+							</div>
+							<div class="sel" style="width: 100%;padding-left:1%">
+								<div>
+									<div style="border:1px solid black;text-align:center;display:inline-block; width:49%">
+										<img id="i21" src="images/img-01.png" onclick="sel(2, this)">
+									</div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i22" src="images/img-01.png" onclick="sel(2, this)">
+									</div>
+								</div>
+								<div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i23" src="images/img-01.png" onclick="sel(2, this)">
+									</div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i24" src="images/img-01.png" onclick="sel(2, this)">
+									</div>
+								</div>
+								<div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i25" src="images/img-01.png" onclick="sel(2, this)">
+									</div>
+									<div style="border:1px solid black;text-align:center;display:inline-block;width:49%">
+										<img id="i26" src="images/img-01.png" onclick="sel(2, this)">
+									</div>
+								</div>
+							</div>
+							<input type="text" style="display:none" id="sel2">
+						</div><br><br>
+
+						<!--<b>What color does the text evoke in you? Choose the color that you are thinking of after reading the text:</b><br><br>
+						<span>
+							<input type="color" name="favcolor" id="24" value="#0000ff">
+						</span> -->
+					</div>
+
+					<div class="wrap-input100 validate-input bg1">
+						<div style="text-align:center">2/4</div><br>
+						<div class="wrap-input100 validate-input bg1">
+							<div style="border: 1px solid black; width: 100%">
+								<img id="im3" src="images/prints/01.png">
+							</div>
+						</div>
+						<b>On a scale between positive and negative, how do you perceive the mood of the visual?</b><br><br>
+						<span>
+							<input type="range" min="0" max="8" value="4" class="slider" id="mood1">
+						</span>
+						<table style="width:100%">
+							<tr>
+								<td>Negative</td>
+								<td style="text-align:right">Positive</td>
+							</tr>
+						</table><br><br>
+						<b>What first words comes to your mind describing the visual?</b><br><br>
+						<div class="wrap-input100 validate-input bg1">
+							<textarea maxlength="150" class="input100" name="message" id="words1" placeholder="Type the words here..."></textarea>
+						</div><br><br>
+						<b>From the following words, what characteristics do you think the visual communicates?</b>
+						<div class="wrap-input100 validate-input bg1">
+							<table style="width:50%">
+								<tr>
+									<td>Random</td>
+									<td><input type="radio" value="Column+1" name="r11"></td>
+									<td><input type="radio" value="Column+2" name="r11" ></td>
+									<td style="text-align:right">Structured</td>
+								</tr>
+								<tr>
+									<td>Harmonious</td>
+									<td><input type="radio" value="Column+1"  name="r12"></td>
+									<td><input type="radio" value="Column+2" name="r12" ></td>
+									<td style="text-align:right">Dissonant</td>
+								</tr>
+								<tr>
+									<td>Simple</td>
+									<td><input type="radio" value="Column+1"  name="r13"></td>
+									<td><input type="radio" value="Column+2" name="r13" ></td>
+									<td style="text-align:right">Complex</td>
+								</tr>
+								<tr>
+									<td>In movement</td>
+									<td><input type="radio" value="Column+1"  name="r14"></td>
+									<td><input type="radio" value="Column+2" name="r14" ></td>
+									<td style="text-align:right">Static</td>
+								</tr>
+								<tr>
+									<td>Diversity</td>
+									<td><input type="radio" value="Column+1"  name="r15" ></td>
+									<td><input type="radio" value="Column+2" name="r15" ></td>
+									<td style="text-align:right">Uniformness</td>
+								</tr>
+								<tr>
+									<td>Deep</td>
+									<td><input type="radio" value="Column+1"  name="r16" ></td>
+									<td><input type="radio" value="Column+2" name="r16" ></td>
+									<td style="text-align:right">Flat</td>
+								</tr>
+								<tr>
+									<td>Loose</td>
+									<td><input type="radio" value="Column+1"  name="r17" ></td>
+									<td><input type="radio" value="Column+2" name="r17" ></td>
+									<td style="text-align:right">Tight</td>
+								</tr>
+								<tr>
+									<td>Unitedness</td>
+									<td><input type="radio" value="Column+1"  name="r18"></td>
+									<td><input type="radio" value="Column+2" name="r18" ></td>
+									<td style="text-align:right">Separation</td>
+								</tr>
+								<tr>
+									<td>Calm</td>
+									<td><input type="radio" value="Column+1"  name="r19"></td>
+									<td><input type="radio" value="Column+2" name="r19" ></td>
+									<td style="text-align:right">Vibrant</td>
+								</tr>
+								<tr>
+									<td>Cold</td>
+									<td><input type="radio" value="Column+1"  name="r110"></td>
+									<td><input type="radio" value="Column+2" name="r110" ></td>
+									<td style="text-align:right">Warm</td>
+								</tr>
+								<tr>
+									<td>Smooth</td>
+									<td><input type="radio" value="Column+1"  name="r111"></td>
+									<td><input type="radio" value="Column+2" name="r111" ></td>
+									<td style="text-align:right">Noisy</td>
+								</tr>
+								<tr>
+									<td>Strong</td>
+									<td><input type="radio" value="Column+1"  name="r112"></td>
+									<td><input type="radio" value="Column+2"  name="r112" ></td>
+									<td style="text-align:right">Weak</td>
+								</tr>
+							</table><br><br>
+						</div>
+					</div>
+
+					<div class="wrap-input100 validate-input bg1">
+						<div style="text-align:center">3/4</div><br>
+						<div class="wrap-input100 validate-input bg1">
+							<div style="border: 1px solid black; width: 100%">
+								<img id="im4" src="images/prints/01.png">
+							</div>
+						</div>
+						<b>On a scale between positive and negative, how do you perceive the mood of the visual?</b><br><br>
+						<span>
+							<input type="range" min="0" max="8" value="4" class="slider" id="mood2">
+						</span>
+						<table style="width:100%">
+							<tr>
+								<td>Negative</td>
+								<td style="text-align:right">Positive</td>
+							</tr>
+						</table><br><br>
+						<b>What first words comes to your mind describing the visual?</b><br><br>
+						<div class="wrap-input100 validate-input bg1">
+							<textarea maxlength="150" class="input100" name="message" id="words2" placeholder="Type the words here..."></textarea>
+						</div><br><br>
+						<b>From the following words, what characteristics do you think the visual communicates?</b>
+						<div class="wrap-input100 validate-input bg1">
+							<table style="width:50%">
+									<tr>
+										<td>Random</td>
+										<td><input type="radio" value="Column+1" name="r21" ></td>
+										<td><input type="radio" value="Column+2" name="r21" ></td>
+										<td style="text-align:right">Structured</td>
+									</tr>
+									<tr>
+										<td>Harmonious</td>
+										<td><input type="radio" value="Column+1" name="r22" ></td>
+										<td><input type="radio" value="Column+2" name="r22" ></td>
+										<td style="text-align:right">Dissonant</td>
+									</tr>
+									<tr>
+										<td>Simple</td>
+										<td><input type="radio" value="Column+1" name="r23" ></td>
+										<td><input type="radio" value="Column+2" name="r23" ></td>
+										<td style="text-align:right">Complex</td>
+									</tr>
+									<tr>
+										<td>In movement</td>
+										<td><input type="radio" value="Column+1" name="r24"></td>
+										<td><input type="radio" value="Column+2" name="r24" ></td>
+										<td style="text-align:right">Static</td>
+									</tr>
+									<tr>
+										<td>Diversity</td>
+										<td><input type="radio" value="Column+1" name="r25" ></td>
+										<td><input type="radio" value="Column+2" name="r25" ></td>
+										<td style="text-align:right">Uniformness</td>
+									</tr>
+									<tr>
+										<td>Deep</td>
+										<td><input type="radio" value="Column+1" name="r26"></td>
+										<td><input type="radio" value="Column+2" name="r26" ></td>
+										<td style="text-align:right">Flat</td>
+									</tr>
+									<tr>
+										<td>Loose</td>
+										<td><input type="radio" value="Column+1" name="r27"></td>
+										<td><input type="radio" value="Column+2" name="r27" ></td>
+										<td style="text-align:right">Tight</td>
+									</tr>
+									<tr>
+										<td>Unitedness</td>
+										<td><input type="radio" value="Column+1" name="r28" ></td>
+										<td><input type="radio" value="Column+2" name="r28" ></td>
+										<td style="text-align:right">Separation</td>
+									</tr>
+									<tr>
+										<td>Calm</td>
+										<td><input type="radio" value="Column+1" name="r29" ></td>
+										<td><input type="radio" value="Column+2" name="r29" ></td>
+										<td style="text-align:right">Vibrant</td>
+									</tr>
+									<tr>
+										<td>Cold</td>
+										<td><input type="radio" value="Column+1" name="r210" ></td>
+										<td><input type="radio" value="Column+2" name="r210" ></td>
+										<td style="text-align:right">Warm</td>
+									</tr>
+									<tr>
+										<td>Smooth</td>
+										<td><input type="radio" value="Column+1" name="r211"></td>
+										<td><input type="radio" value="Column+2" name="r211" ></td>
+										<td style="text-align:right">Noisy</td>
+									</tr>
+									<tr>
+										<td>Strong</td>
+										<td><input type="radio" value="Column+1" name="r212"></td>
+										<td><input type="radio" value="Column+2" name="r212" ></td>
+										<td style="text-align:right">Weak</td>
+									</tr>
+							</table><br><br>
+						</div>
+					</div>
+
+					<div class="wrap-input100 bg1">
+						<div style="text-align:center">4/4</div><br>
+						That’s it. Thanks for participating!<br><br>
+						PS: If you wish to receive signature of your favourite movie, include your email and name of the movie and you will get a mail from me after the end of this research:<br><br>
+						<div class="wrap-input100 validate-input bg1">
+							Email
+							<input type="email" id="em" style="border: 1px solid black">
+							Movie name
+							<input type="text" id="mov" style="border: 1px solid black">
+						</div><br>
+						If you have any comments, please let us know:<br><br>
+						<div class="wrap-input100 validate-input bg1">
+							<textarea maxlength="150" class="input100" name="message" id="com" placeholder="Type any comments you have here..."></textarea>
+						</div>
+					</div>
+
+					<div class="container-contact100-form-btn">	
+						<input type="button" value="Submit" class="contact100-form-btn" onclick="clicked()">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		pointers = [];
+		texts = Object;
+		selected = [undefined, undefined];
+
+		function sel(n,el){
+			selected[n-1] = el.id;
+			for (var i = 1; i<7; i++){
+				document.getElementById("i"+n+i).parentElement.style.borderColor = "black";
+			}
+			el.parentElement.style.borderColor = "#0be642";
+		}
+		function distribute(){
+
+			var a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+
+			//Random unique images
+			var rand = Math.floor(Math.random()*a.length);
+			var imseed1 = a[rand];
+			a.splice(rand,1);
+
+			rand = Math.floor(Math.random()*a.length);
+			var imseed2 = a[rand];
+			a.splice(rand,1);
+			
+			rand = Math.floor(Math.random()*a.length);
+			var imseed3 = a[rand];
+			a.splice(rand,1);
+
+			rand = Math.floor(Math.random()*a.length);
+			var imseed4 = a[rand];
+
+			//Pair images random slots
+			var pairSlot1 = Math.floor(Math.random()*6)+1;
+			var pairSlot2 = Math.floor(Math.random()*6)+1;
+
+			//Main images set
+			document.getElementById("im1").src = "images/prints/"+imseed1+"1.png";
+			document.getElementById("im2").src = "images/prints/"+imseed2+"1.png";
+
+			//Pair images set
+			document.getElementById("i1"+pairSlot1).src = "images/prints/"+imseed1+"2.png";
+			document.getElementById("i2"+pairSlot2).src = "images/prints/"+imseed2+"2.png";
+
+			//Rating images set
+			var type = (Math.floor(Math.random()*2)+1);
+			document.getElementById("im3").src = "images/prints/"+imseed3+type+".png";
+			type = (Math.floor(Math.random()*2)+1);
+			document.getElementById("im4").src = "images/prints/"+imseed4+type+".png";
+
+			//#1
+			a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+			//Take out the main pair
+			a.splice(imseed1,1);
+			for (var i = 1; i<7; i++){
+				if(i!=pairSlot1){
+					var chosen = a[Math.floor(Math.random()*a.length)];
+					type = (Math.floor(Math.random()*2)+1);
+					document.getElementById("i1"+i).src = "images/prints/"+chosen+type+".png";
+					a.splice(chosen,1);
+				}
+			}
+
+			//#2
+			a = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+			//Take out the main pair
+			a.splice(imseed2,1);
+			for (var i = 1; i<7; i++){
+				if(i!=pairSlot2){
+					var chosen = a[Math.floor(Math.random()*a.length)];
+					type = (Math.floor(Math.random()*2)+1);
+					document.getElementById("i2"+i).src = "images/prints/"+chosen+type+".png";
+					a.splice(chosen,1);
+				}
+			}
+
+		}
+
+		function getRadio(id){
+			var radios = document.getElementsByName("r"+id);
+			for (var i = 0, length = radios.length; i < length; i++){
+				if (radios[i].checked)
+				{
+					// do whatever you want with the checked radio
+					return radios[i].value;
+
+					// only one radio can be logically checked, don't check the rest
+					break;
+				}
+			}
+			return "none";
+		}
+
+		function clicked(){
+
+
+			//Check if selected
+			if (selected[0]!=undefined && selected[1]!=undefined){
+				
+				//Correct selections
+				var temp = document.getElementById("im1").src.split("/");
+				var main1 =  temp[temp.length-1].split(".")[0];
+				temp = main1.slice(0,-1);
+				var temp2 = document.getElementById(selected[0]).src.split("/");
+				var selected1 = temp2[temp2.length-1].split(".")[0];
+				temp2 = selected1.slice(0,-1);
+				var corr1 = temp == temp2;
+
+				temp = document.getElementById("im2").src.split("/");
+				var main2 =  temp[temp.length-1].split(".")[0];
+				temp = main2.slice(0,-1);
+				temp2 = document.getElementById(selected[1]).src.split("/");
+				var selected2 = temp2[temp2.length-1].split(".")[0];
+				temp2 = selected2.slice(0,-1);
+				var corr2 = temp == temp2;
+
+				temp = document.getElementById("im3").src.split("/");
+				var main3 =  temp[temp.length-1].split(".")[0];
+
+				temp = document.getElementById("im4").src.split("/");
+				var main4 =  temp[temp.length-1].split(".")[0];
+				
+				console.log(main1+" / "+main2+" / "+selected1+" / "+selected2+" / "+corr1+" / "+corr2);
+
+				//Variable map
+				var v1 = (corr1) ? "YES" : "NO";
+				var v2 = main1;
+				var v3 = selected1;
+
+				var v4 = (corr2) ? "YES" : "NO";
+				var v5 = main2;
+				var v6 = selected2;
+
+				var v7 = main3;
+				var v8 = document.getElementById("mood1").value;
+				var v9 = (document.getElementById("words1").value.length == 0) ? "none" : document.getElementById("words1").value.replace(" ", "%20");
+				
+				var v10 = getRadio(11);
+				var v11 = getRadio(12);
+				var v12 = getRadio(13);
+				var v13 = getRadio(14);
+				var v14 = getRadio(15);
+				var v15 = getRadio(16);
+				var v16 = getRadio(17);
+				var v17 = getRadio(18);
+				var v18 = getRadio(19);
+				var v19 = getRadio(110);
+				var v20 = getRadio(111);
+				var v21 = getRadio(112);
+
+				var v22 = main4;
+				var v23 = document.getElementById("mood2").value;
+				var v24 = (document.getElementById("words2").value.length == 0) ? "none" : document.getElementById("words2").value.replace(" ", "%20");
+
+				var v25 = getRadio(21);
+				var v26 = getRadio(22);
+				var v27 = getRadio(23);
+				var v28 = getRadio(24);
+				var v29 = getRadio(25);
+				var v30 = getRadio(26);
+				var v31 = getRadio(27);
+				var v32 = getRadio(28);
+				var v33 = getRadio(29);
+				var v34 = getRadio(210);
+				var v35 = getRadio(211);
+				var v36 = getRadio(212);
+
+				var v37 = (document.getElementById("em").value.length > 0) ? "YES" : "NO";
+				var v38 = (document.getElementById("em").value.length == 0) ? "none" : document.getElementById("em").value.replace(" ", "%20");
+				var v39 = (document.getElementById("mov").value.length == 0) ? "none" : document.getElementById("mov").value.replace(" ", "%20");
+				var v40 = (document.getElementById("com").value.length == 0) ? "none" : document.getElementById("com").value.replace(" ", "%20");
+
+				//Link
+				var link = `https://docs.google.com/forms/d/e/1FAIpQLSc-aO46DRh0e8BPHPKfYQWA9pSZYVtpuvg3BRVRs2v2t7eKfA/formResponse?entry.877086558=${v1}&entry.671334558=${v2}&entry.1319709330=${v3}&entry.1005869304=${v4}&entry.320652094=${v5}&entry.1008377817=${v6}&entry.1498135098=${v7}&entry.325028560=${v8}&entry.122898419=${v9}&entry.2026372927=${v10}&entry.443880985=${v11}&entry.1414941792=${v12}&entry.793709214=${v13}&entry.152540972=${v14}&entry.1299857658=${v15}&entry.1465357426=${v16}&entry.1507718931=${v17}&entry.1178425917=${v18}&entry.525233964=${v19}&entry.1316203633=${v20}&entry.2117015993=${v21}&entry.613486499=${v22}&entry.608464064=${v23}&entry.1313301162=${v24}&entry.491805619=${v25}&entry.1411199062=${v26}&entry.1073811474=${v27}&entry.1861831668=${v28}&entry.1027791654=${v29}&entry.1669657695=${v30}&entry.2015325004=${v31}&entry.412509701=${v32}&entry.1652911107=${v33}&entry.779393960=${v34}&entry.915687668=${v35}&entry.1993984987=${v36}&entry.1761452420=${v37}&entry.1640284319=${v38}&entry.915271242=${v39}&entry.748884944=${v40}&submit=Submit`;
+
+				console.log(link);
+
+				window.location.replace(link);
+				//window.open(link, '_blank');
+			}
+			else
+				alert("Please select at least one picture in section 1 and 2.");
+		}
+	</script>
+</body>
+</html>
